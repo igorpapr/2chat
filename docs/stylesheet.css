@@ -27,10 +27,10 @@ p{
 }
 
 .dialogs{
-	border-right: 2px solid #FF7A00; 
-	width: 30%;
+    width: 31%;
+    padding-bottom: 10px;
 }
 
 .history{
-	width: 69.8%;
+	width: 69%;
 }
