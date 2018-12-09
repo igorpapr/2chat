@@ -1,0 +1,36 @@
+body{
+	background-color: #e7ebf0;
+	max-width: 1010px;
+	margin: 0 auto;
+}
+
+header{
+	background-color: #FF7A00;
+	color: #fff;
+	font: normal 40px 'Indie Flower';
+	padding: 0 10px;
+	cursor: default;
+}
+
+p{
+	margin: 0;
+}
+
+.main-content{
+	box-shadow: 0 0 2px 0 rgba(51, 51, 51, 0.05), 0 1px 4px 0 rgba(51, 51, 51, 0.15);
+}
+
+.dialogs,.history{
+	height: 600px;
+	float: left;
+	background-color: #fff;
+}
+
+.dialogs{
+	border-right: 2px solid #FF7A00; 
+	width: 30%;
+}
+
+.history{
+	width: 69.8%;
+}
