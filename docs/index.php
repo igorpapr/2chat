@@ -12,31 +12,6 @@
   </head>
 
   <body>
-  	<?php
-$secret = "6Lew6H8UAAAAAIwZg8ucqjjvhMOKVcWgRbViQGod";
-$response = null;
-$reCaptcha = new ReCaptcha($secret);
-if (!empty($_POST)) {
- 
-    //Валидация $_POST['name'] и $_POST['email']
-    if ($_POST["g-recaptcha-response"]) {
-        $response = $reCaptcha->verifyResponse(
-            $_SERVER["REMOTE_ADDR"],
-            $_POST["g-recaptcha-response"]
-        );
-    }
- 
-    if ($response != null && $response->success) {
-        echo "Все хорошо.";
-    } else {
-        echo "Вы точно человек?";
-    }
- 
-}
-
-
-?>
-
 
   	<div class="main-content">
 
@@ -53,15 +28,17 @@ if (!empty($_POST)) {
         <div class="dialog-wrapper">
           <div class="dialog-content">
 
+            <div>
+                <h3 class="sign-up-in active">Sign in</h3>
+                <h3 class="sign-up-in">Sign up</h3>
+            </div>
+            <p class="description">Please write down your nickname and password</p>
           	<form>
-          		<h3>Sign in</h3>
-          		<p class="description">Please write down your nickname and password</p>
                 <p>Nickname</p>
                 <input type="text" id="nickname">
                 <p>Password</p>
                 <input type="password" id="password">
                 <p></p>
-                <div class="g-recaptcha" data-sitekey="6Lew6H8UAAAAAFnHtTpnkdPNJOp6PX8Fiyh8IASH"></div>
                 <button class="my-button"> Sign in </button>
             </form> 
 

@@ -44,9 +44,11 @@ header p{
 	padding: 44px 65px;
 }
 
-form .description{
+.description{
+	clear: both;
 	line-height: 160%;
 	margin: 15px 0 20px 0;
+	font: 15px Ubuntu;
 	font-style: normal;
 	font-weight: 100;
 	color: gray;
@@ -57,9 +59,27 @@ form p{
 	font: 15px Ubuntu;
 }
 
-form h3{
+.sign-up-in{
+	float: left; margin-right: 15px;
+	border-bottom: 2px solid #FF7A00;
+	padding: 5px;
 	margin-top: 0px;
 	font-family: Ubuntu;
+}
+
+.active{
+	color: #fff;
+	background-color: #FF7A00;
+}
+
+.description{
+	clear: both;
+	line-height: 160%;
+	margin: 15px 0 20px 0;
+	font: 15px Ubuntu;
+	font-style: normal;
+	font-weight: 100;
+	color: gray;
 }
 
 input{
@@ -77,18 +97,19 @@ input:focus {
 }
 
 .my-button {
+	border-radius: 5px;
 	margin-top: 15px;
 	transition-duration: 0.4s;
     background-color: white; 
-    color: black; 
-    font-size: 15px;
+    font-size: 20px;
     padding: 5px;
     border: 2px solid #FF7A00;
 }
 
 .my-button:hover {
-  background-color: #FF7A00;
-  color: white;
+	border-radius: 5px;
+    background-color: #FF7A00;
+    color: white;
 }
 
 .history-wrap{
