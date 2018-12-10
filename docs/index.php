@@ -1,8 +1,3 @@
-<?php
-require_once "recaptchalib.php";
- 
-?>
-
 <!DOCTYPE html>
 <html>
   <head>
