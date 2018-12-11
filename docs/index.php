@@ -20,6 +20,7 @@ $data = $_POST;
 <!DOCTYPE html>/1.12.1/jquery-ui.js"></script>
     <script src='https://www.google.com/recaptcha/api.js?render=6Lew6H8UAAAAAFnHtTpnkdPNJOp6PX8Fiyh8IASH'></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>2chat</title>
   </head>
 
@@ -35,7 +36,7 @@ $data = $_POST;
 
        <div class="history-wrap">
 
-        <div class="mssgs">Сообщения</div>
+        <div class="mssgs">Сообщение</div>
 
           <form action="../chat/chat.php" method="post" id="ajax-form">
              <textarea id="txtar" name="common_text"></textarea>

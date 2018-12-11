@@ -50,10 +50,7 @@ function signFunc(b){
 function submitForm(form){
     var url = form.attr("action");
     var formData = $(form).serializeArray();
-
     
-
-
     $.post(url, formData).done(function (data) {
         $('#txtar').val('');
     });
