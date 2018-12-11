@@ -30,6 +30,12 @@ $( document ).ready(function() {
     $('#sendm').on("click", function() {
         sendAjaxForm("../chat/chat.php");
     });
+
+    //loading messages
+    $.ajaxSetup({cache:false});
+    setInterval(function(){$('.mssgs').load('../chat/refresh_messages.php');
+    },500);
+
 });
 
 function signFunc(b){
@@ -50,7 +56,7 @@ function signFunc(b){
 function submitForm(form){
     var url = form.attr("action");
     var formData = $(form).serializeArray();
-    
+
     $.post(url, formData).done(function (data) {
         $('#txtar').val('');
     });
@@ -59,6 +65,6 @@ function submitForm(form){
 
 $("#ajax-form").submit(function() {
    submitForm($(this));
+   $(".mssgs").scrollTop(2000);
    return false;
 });
-	

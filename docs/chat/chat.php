@@ -1,6 +1,7 @@
 <?php 
   require "db.php";
 
+    
     if($_POST['common_text']!=''){
     $message = R::dispense('chat');
     $message->userid = $_SESSION['logged_user'];

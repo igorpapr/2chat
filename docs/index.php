@@ -36,7 +36,12 @@ $data = $_POST;
 
        <div class="history-wrap">
 
-        <div class="mssgs">Сообщение</div>
+        <div class="mssgs">
+          Сообщение
+          <?php
+          
+          ?>
+        </div>
 
           <form action="../chat/chat.php" method="post" id="ajax-form">
              <textarea id="txtar" name="common_text"></textarea>
