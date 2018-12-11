@@ -26,6 +26,10 @@ $( document ).ready(function() {
         signswitch[0]=false;
         localStorage.setItem('signswitch',JSON.stringify(signswitch));
     });
+
+    $('#sendm').on("click", function() {
+        sendAjaxForm("../chat/chat.php");
+    });
 });
 
 function signFunc(b){
@@ -42,4 +46,23 @@ function signFunc(b){
     }
     
 }
+
+function submitForm(form){
+    var url = form.attr("action");
+    var formData = $(form).serializeArray();
+
+    console.log(formData[0].value);
+
+
+    $.post(url, formData).done(function (data) {
+        alert(formData[0].value);
+        console.log(data);
+    });
+}
+
+
+$("#ajax-form").submit(function() {
+   submitForm($(this));
+   return false;
+});
 	

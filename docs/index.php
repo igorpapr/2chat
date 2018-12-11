@@ -12,6 +12,9 @@ $data = $_POST;
     <link rel="stylesheet" href="./css/stylesheet.css">
     <link rel="shortcut icon" href="./img/favico.ico" type="image/png">
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Ubuntu" rel="stylesheet">
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://code.jquery.com/ui
 <!DOCTYPE html>/1.12.1/jquery-ui.js"></script>
@@ -31,10 +34,16 @@ $data = $_POST;
         </header>
 
        <div class="history-wrap">
-          <form method="POST" action="/chat/chat.php">
+          <!-- <form method="POST">
             <textarea style="resize: none;" name="common_text" placeholder="Write your message"></textarea>
-            <input type="submit" name="common_submit" value="Send">
+            <input type="submit" name="common_submit" value="Send"  id="sendm">
+          </form> -->
+
+          <form action="../chat/chat.php" method="post" id="ajax-form">
+          <input type="text" name="common_text" />
+          <input type="submit" name="send" value="send" >
           </form>
+
         </div>
     </div>
 

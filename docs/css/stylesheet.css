@@ -33,6 +33,7 @@ header::after {
 .logout a{
 
 	font: 25px Ubuntu;
+	font-weight: bold;
 	color: #fff;
 	text-decoration: none;
 }
