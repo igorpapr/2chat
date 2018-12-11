@@ -1,3 +1,65 @@
+<?php 
+require "authorization/db.php";
+
+$data = $_POST;
+  if(isset($data['do_login']))
+  {
+    $user = R::findOne('users','login = ?', array($data['login']));
+    if($user)
+    {
+      //login exists
+      if(password_verify($data['password'], $user-> password)){
+        //vse horosho, loginim polzovatelya
+        $_SESSION['logged_user'] = $user;
+      }else
+      {
+        $errors[] = "Wrong password";
+      }
+    }else
+    {
+      $errors[] = "Couldn't find user with that login";
+    }
+
+    if(!empty($errors))
+    {
+      echo '<div style="color:red;">'.array_shift($errors).'</div><hr>';
+    }
+  }
+
+
+  if (isset($data['do_signup'])) {
+    //
+
+    $errors = array();
+    if (trim($data['login']) == '') {
+        $errors[] = 'Enter login!';
+    }
+
+    if ($data['password'] == '') {
+        $errors[] = 'Enter password!';
+    }
+
+    if ($data['password'] != $data['password_2']) {
+        $errors[] = 'Enter second password correctly!';
+    }
+
+    if (R::count('users','login = ?', array($data['login']))>0) {
+        $errors[] = 'User with that login already exist';
+    }
+
+    if (empty($errors)) {
+        $user = R::dispense('users');
+        $user->login = $data['login'];
+        $user->password = password_hash($data['password'], PASSWORD_DEFAULT);
+        R::store($user);
+
+    } else {
+        echo '<div style="color: red;">' . array_shift($errors) . '</div>';
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -24,6 +86,7 @@
         </div>
     </div>
 
+    <?php if(!isset($_SESSION['logged_user']) ) : ?>
     <div class="back-dialog">
         <div class="dialog-wrapper">
           <div class="dialog-content">
@@ -33,15 +96,33 @@
                 <h3 class="sign-up-in" id="up">Sign up</h3>
             </div>
             <p class="description">Please write down your nickname and password</p>
-            <script type="text/javascript" src="./js/index.js"></script>
-            <form>
+            
+            <div id="signin">
+            <form action = "index.php" method ="POST">
                 <p>Nickname</p>
-                <input type="text" id="nickname">
+                <input type="text" name="login" value="<?php echo@$data['login']; ?>">
                 <p>Password</p>
-                <input type="password" id="password">
+                <input type="password" name="password" value="<?php echo@$data['password']; ?>">
                 <p></p>
-                <button class="my-button"> Sign in </button>
+                <button class="my-button" type="submit" name="do_login"> Sign in </button>
             </form> 
+          </div>
+
+          <div class="dnone" id="signup">
+            <form action = "index.php" method ="POST">
+                <p>Nickname</p>
+                <input type="text" name="login">
+                <p>Password</p>
+                <input type="password" name="password">
+                <p>Password again</p>
+                <input type="password" name="password_2">
+                <p></p>
+                <button class="my-button" type="submit" name="do_signup"> Sign up </button>
+            </form> 
+          </div>
+        <?php endif; ?>
+
+          <script type="text/javascript" src="./js/index.js"></script>
 
           </div>
         </div>

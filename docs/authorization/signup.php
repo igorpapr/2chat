@@ -32,8 +32,6 @@ if (isset($data['do_signup'])) {
     } else {
         echo '<div style="color: red;">' . array_shift($errors) . '</div>';
     }
-
-
 }
 ?>
 

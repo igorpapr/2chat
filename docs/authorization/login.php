@@ -30,17 +30,12 @@
 
 <form action = "login.php" method ="POST">
 
-	<p>
 		<p><strong>Login</strong>:</p>
 		<input type="text" name="login" value="<?php echo@$data['login']; ?>">
-	</p>
 
-	<p>
 		<p><strong>Password</strong>:</p>
 		<input type="password" name="password" value="<?php echo@$data['password']; ?>">
-	</p>
 
-	<p>
 		<button type="submit" name="do_login">
 			Log in
 		</button>
