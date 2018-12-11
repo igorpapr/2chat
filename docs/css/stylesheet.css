@@ -69,10 +69,11 @@ form p{
 	padding: 5px;
 	margin-top: 0px;
 	font-family: Ubuntu;
-	cursor: default;
+	cursor: pointer;
 }
 
 .active{
+	transition-duration: 0.4s;
 	color: #fff;
 	background-color: #FF7A00;
 }
