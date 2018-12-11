@@ -25,7 +25,9 @@ $data = $_POST;
     <div class="main-content">
 
         <header>
-          <p>2chat</p>
+          <div class="divp">2chat</div>
+
+          <div class="logout"><a href="/authorization/logout.php">Log out</a>
         </header>
 
         <div class="history-wrap">
@@ -88,37 +90,36 @@ $data = $_POST;
           <div class="dnone" id="signup">
 
             <?php
-if (isset($data['do_signup'])) {
-    //
+             if (isset($data['do_signup'])) {
+                 $errors = array();
+                 if (trim($data['login']) == '') {
+                     $errors[] = 'Enter login!';
+                 }
 
-    $errors = array();
-    if (trim($data['login']) == '') {
-        $errors[] = 'Enter login!';
-    }
+                 if ($data['password'] == '') {
+                     $errors[] = 'Enter password!';
+                 }
 
-    if ($data['password'] == '') {
-        $errors[] = 'Enter password!';
-    }
+                 if ($data['password'] != $data['password_2']) {
+                     $errors[] = 'Enter second password correctly!';
+                 }
+             
+                 if (R::count('users','login = ?', array($data['login']))>0) {
+                     $errors[] = 'User with that login already exist';
+                 }
 
-    if ($data['password'] != $data['password_2']) {
-        $errors[] = 'Enter second password correctly!';
-    }
-
-    if (R::count('users','login = ?', array($data['login']))>0) {
-        $errors[] = 'User with that login already exist';
-    }
-
-    if (empty($errors)) {
-        $user = R::dispense('users');
-        $user->login = $data['login'];
-        $user->password = password_hash($data['password'], PASSWORD_DEFAULT);
-        $user->moderator = false;
-        R::store($user);
-
-    } else {
-        echo '<div style="color: red;">' . array_shift($errors) . '</div>';
-    }
-}
+                 if (empty($errors)) {
+                     $user = R::dispense('users');
+                     $user->login = $data['login'];
+                     $user->password = password_hash($data['password'], PASSWORD_DEFAULT);
+                     $user->moderator = false;
+                     R::store($user);
+                     echo '<div style="color: green;">Signed up successfully,</div>';
+                     echo '<div style="color: green;">you can now sign in</div>';
+                 } else {
+                     echo '<div style="color: red;">' . array_shift($errors) . '</div>';
+                 }
+             }
             ?>
 
 

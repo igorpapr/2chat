@@ -3,17 +3,40 @@ body{
 	margin: 0;
 }
 
-header{
+header{ 
 	background-color: #FF7A00;
 	color: #fff;
-	font: normal 40px 'Indie Flower';
-	padding: 0 15px;
+	height: 4em;
+	text-align: justify;
+    padding: 0 15px;
 	cursor: default;
 }
 
-header p{
-	margin: 0;
+header .divp{
+	width: 50%;
+	font: normal 40px 'Indie Flower';
+	margin: 0 0;
+	display: inline-block;
 }
+
+header .logout{
+   
+	display: inline-block;
+}
+
+header::after {
+    content: '';
+    display: inline-block;
+    width: 70%;
+}
+
+.logout a{
+
+	font: 25px Ubuntu;
+	color: #fff;
+	text-decoration: none;
+}
+
 
 .main-content{
 	position: relative;
