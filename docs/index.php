@@ -38,7 +38,7 @@ $data = $_POST;
         <div class="mssgs">Сообщения</div>
 
           <form action="../chat/chat.php" method="post" id="ajax-form">
-             <textarea name="common_text"></textarea>
+             <textarea id="txtar" name="common_text"></textarea>
              <div style="text-align: left; margin-left: 10%"><input class="my-button" type="submit" name="send" value="send"></div>
           </form>
 

@@ -51,10 +51,11 @@ function submitForm(form){
     var url = form.attr("action");
     var formData = $(form).serializeArray();
 
-    console.log(formData[0].value);
+    
 
 
     $.post(url, formData).done(function (data) {
+        $('#txtar').val('');
     });
 }
 
