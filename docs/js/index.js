@@ -34,7 +34,8 @@ $( document ).ready(function() {
     //loading messages
     $.ajaxSetup({cache:false});
     setInterval(function(){$('.mssgs').load('../chat/refresh_messages.php');
-    },500);
+    },5000);
+
 
 });
 
@@ -65,6 +66,5 @@ function submitForm(form){
 
 $("#ajax-form").submit(function() {
    submitForm($(this));
-   $(".mssgs").scrollTop(2000);
    return false;
 });

@@ -55,6 +55,29 @@ header::after {
 	overflow-y: scroll;
 }
 
+.usertxt{
+	width: 70%;
+
+}
+
+.user{
+	font-weight: bold;
+	font-family: Arial;
+	margin-bottom: 7px;
+	margin-top:15px;
+}
+
+.usrmssg{
+	font-family: Arial;
+}
+
+.time{
+	font-size: 10px;
+	font-family: Arial;
+	float: right; 
+	opacity: 0.5;
+}
+
 textarea{
 	margin: 0 auto;
 	resize: none;

@@ -38,9 +38,6 @@ $data = $_POST;
 
         <div class="mssgs">
           Сообщение
-          <?php
-          
-          ?>
         </div>
 
           <form action="../chat/chat.php" method="post" id="ajax-form">
@@ -68,7 +65,7 @@ $data = $_POST;
 
               if(isset($data['do_login']))
              {
-               $user = R::findOne('users','login = ?', array($data['login']));
+               $user = R::findOne('users','login = ?', array(trim($data['login'])));
                if($user)
                {
                  //login exists
@@ -126,8 +123,8 @@ $data = $_POST;
 
                  if (empty($errors)) {
                      $user = R::dispense('users');
-                     $user->login = $data['login'];
-                     $user->password = password_hash($data['password'], PASSWORD_DEFAULT);
+                     $user->login = trim(htmlspecialchars($data['login']));
+                     $user->password = password_hash(htmlspecialchars($data['password']), PASSWORD_DEFAULT);
                      $user->moderator = false;
                      R::store($user);
                      echo '<div style="color: green;">Signed up successfully,</div>';
