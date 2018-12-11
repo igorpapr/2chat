@@ -55,8 +55,6 @@ function submitForm(form){
 
 
     $.post(url, formData).done(function (data) {
-        alert(formData[0].value);
-        console.log(data);
     });
 }
 

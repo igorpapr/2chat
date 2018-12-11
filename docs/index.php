@@ -34,14 +34,12 @@ $data = $_POST;
         </header>
 
        <div class="history-wrap">
-          <!-- <form method="POST">
-            <textarea style="resize: none;" name="common_text" placeholder="Write your message"></textarea>
-            <input type="submit" name="common_submit" value="Send"  id="sendm">
-          </form> -->
+
+        <div class="mssgs">Сообщения</div>
 
           <form action="../chat/chat.php" method="post" id="ajax-form">
-          <input type="text" name="common_text" />
-          <input type="submit" name="send" value="send" >
+             <textarea name="common_text"></textarea>
+             <div style="text-align: left; margin-left: 10%"><input class="my-button" type="submit" name="send" value="send"></div>
           </form>
 
         </div>

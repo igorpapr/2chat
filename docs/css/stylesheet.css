@@ -46,6 +46,40 @@ header::after {
 	box-shadow: 0 0 2px 0 rgba(51,51,51,.05), 0 1px 4px 0 rgba(51,51,51,.15);
 }
 
+.mssgs{
+	text-align: center;
+	height: 80%;
+	width: 80%;
+	margin-left: 10%;
+	padding: 5px;
+}
+
+textarea{
+	margin: 0 auto;
+	resize: none;
+	width: 80%;
+	height: 10%;
+	display: inline-block;
+	 outline: none !important;
+    border:1px solid #FF7A00;
+    box-shadow: 0 0 10px #719ECE;
+
+}
+
+input.my-button{
+	display: inline-block;
+	margin-top: 7px;
+	padding: 0;
+	width: 20%;
+	background-color: #FF7A00;
+	color: white; 
+}
+
+input.my-button:hover{
+	background-color: white;
+	color: #FF7A00; 
+}
+
 .back-dialog{
     width:100%;
     min-height:100%;
@@ -145,5 +179,6 @@ input:focus {
 .history-wrap{
 	width: 100%;
 	height: 600px;
+	text-align: center;
 	background-color: #fff;
 }
