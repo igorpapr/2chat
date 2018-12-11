@@ -7,14 +7,14 @@ $data = $_POST;
 
 
 
-<!DOCTYPE html>
 <html>
   <head>
     <link rel="stylesheet" href="./css/stylesheet.css">
     <link rel="shortcut icon" href="./img/favico.ico" type="image/png">
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Ubuntu" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://code.jquery.com/ui
+<!DOCTYPE html>/1.12.1/jquery-ui.js"></script>
     <script src='https://www.google.com/recaptcha/api.js?render=6Lew6H8UAAAAAFnHtTpnkdPNJOp6PX8Fiyh8IASH'></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2chat</title>
@@ -30,8 +30,11 @@ $data = $_POST;
           <div class="logout"><a href="/authorization/logout.php">Log out</a>
         </header>
 
-        <div class="history-wrap">
-         <div class=""></div>
+       <div class="history-wrap">
+          <form method="POST" action="/chat/chat.php">
+            <textarea style="resize: none;" name="common_text" placeholder="Write your message"></textarea>
+            <input type="submit" name="common_submit" value="Send">
+          </form>
         </div>
     </div>
 
@@ -81,7 +84,7 @@ $data = $_POST;
                 <p>Nickname</p>
                 <input type="text" name="login" value="<?php echo@$data['login']; ?>">
                 <p>Password</p>
-                <input type="password" name="password" value="<?php echo@$data['password']; ?>">
+                <input type="password" name="password"  value="<?php echo@$data['password']; ?>">
                 <p></p>
                 <button class="my-button" type="submit" name="do_login"> Sign in </button>
             </form> 
@@ -127,7 +130,7 @@ $data = $_POST;
 
             <form action = "index.php" method ="POST">
                 <p>Nickname</p>
-                <input type="text" name="login">
+                <input type="text" name="login" >
                 <p>Password</p>
                 <input type="password" name="password">
                 <p>Password again</p>
