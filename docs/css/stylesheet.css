@@ -56,19 +56,26 @@ header::after {
 }
 
 .usertxt{
-	width: 70%;
-
+	margin-top:15px;
+	padding: 1px 10px;
+	max-width: 50%;
+	height: auto;
+	background-color:#FFD373;
+	border-radius: 5px;
 }
 
 .user{
 	font-weight: bold;
 	font-family: Arial;
 	margin-bottom: 7px;
-	margin-top:15px;
+	margin-top:5px;
 }
 
 .usrmssg{
 	font-family: Arial;
+	margin-bottom: 7px;
+	max-width: 80%;
+	 word-wrap: break-word;
 }
 
 .time{
@@ -76,6 +83,15 @@ header::after {
 	font-family: Arial;
 	float: right; 
 	opacity: 0.5;
+}
+
+.delete{
+	opacity: 0.8;
+	cursor: pointer;
+}
+
+.delete:hover{
+	text-decoration: underline;
 }
 
 textarea{

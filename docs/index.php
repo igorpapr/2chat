@@ -31,13 +31,12 @@ $data = $_POST;
         <header>
           <div class="divp">2chat</div>
 
-          <div class="logout"><a href="/authorization/logout.php">Log out</a>
+          <div class="logout" ><a id="logout" href="/authorization/logout.php">Log out</a>
         </header>
 
        <div class="history-wrap">
 
-        <div class="mssgs">
-          Сообщение
+        <div class="mssgs" id="m1">
         </div>
 
           <form action="../chat/chat.php" method="post" id="ajax-form">
@@ -96,7 +95,7 @@ $data = $_POST;
                 <p>Password</p>
                 <input type="password" name="password"  value="<?php echo@$data['password']; ?>">
                 <p></p>
-                <button class="my-button" type="submit" name="do_login"> Sign in </button>
+                <button id="gomsg" class="my-button" type="submit" name="do_login"> Sign in </button>
             </form> 
           </div>
 

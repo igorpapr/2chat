@@ -1,5 +1,7 @@
 
 var signswitch = {};
+var msgswitch = {};
+
 
 $( document ).ready(function() {
 
@@ -13,14 +15,20 @@ $( document ).ready(function() {
         signFunc(true);
     }
 
+    if(localStorage.getItem('msgswitch')!=null){
+        msgswitch=JSON.parse(localStorage.getItem('msgswitch'));
+        console.log(msgswitch[0]);
+    }
+
 
     console.log( "ready!" );
     $('#in').on("click", function() {
         signFunc(true);
+
         signswitch[0]=true;
+
         localStorage.setItem('signswitch',JSON.stringify(signswitch));
     });
-
     $('#up').on("click", function() {
         signFunc(false);
         signswitch[0]=false;
@@ -29,12 +37,28 @@ $( document ).ready(function() {
 
     $('#sendm').on("click", function() {
         sendAjaxForm("../chat/chat.php");
+        $("#m1").scrollTop($("#m1").scrollHeight);
     });
 
-    //loading messages
+    $('#gomsg').on("click", function() {
+        msgswitch[0]=true;
+        localStorage.setItem('msgswitch',JSON.stringify(msgswitch));
+    });
+
+    $('#logout').on("click", function() {
+        msgswitch[0]=false;
+        localStorage.setItem('msgswitch',JSON.stringify(msgswitch));
+    });
+
+
+
     $.ajaxSetup({cache:false});
-    setInterval(function(){$('.mssgs').load('../chat/refresh_messages.php');
-    },5000);
+    setInterval(function(){
+        if(msgswitch[0]){
+            $('.mssgs').load('../chat/refresh_messages.php');
+        }
+    },1000);
+
 
 
 });
