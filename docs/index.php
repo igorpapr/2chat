@@ -16,8 +16,6 @@ $data = $_POST;
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://code.jquery.com/ui
-<!DOCTYPE html>/1.12.1/jquery-ui.js"></script>
     <script src='https://www.google.com/recaptcha/api.js?render=6Lew6H8UAAAAAFnHtTpnkdPNJOp6PX8Fiyh8IASH'></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />

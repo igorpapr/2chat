@@ -14,6 +14,6 @@ foreach ($messages as $message) {
              </div>';
 
             if($_SESSION['logged_user']->moderator==1){
-             echo '<div class="delete"><a href="delete_message.php" >Delete message</a></div>';
+             echo '<div class="delete" msg_id="'.$message['id'].'">Delete message</div>';
          }
 }

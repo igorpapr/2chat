@@ -59,6 +59,16 @@ $( document ).ready(function() {
         }
     },1000);
 
+    $(document).on('click', '.delete', function() {
+        $.ajax({
+            type: 'POST',
+            url : '../chat/delete_message.php',
+            data : {id:$(this).attr('msg_id')},
+            success : function(){
+                //$('.mssgs').load('../chat/refresh_messages.php');
+            }
+    });
+    });
 
 
 });
